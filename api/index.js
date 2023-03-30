@@ -13,7 +13,7 @@ export default async function handler(req, res) {
 
   let page = await browser.newPage();
 
-  await page.goto(url, { waitUntil: "load" });
+  await page.goto(url, { waitUntil: "networkidle2" });
 
   const imageBuffer = await page.screenshot();
 
